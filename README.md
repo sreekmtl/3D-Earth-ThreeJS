@@ -2,8 +2,8 @@
 3D virtual globe developed using ThreeJS. Digital Elevation Model (DEM) and overlay image (Landsat8) are loaded as WMS Layers from Geoserver and used to create the 3D terrain.
 
 To Run
-> git clone repo
-> open terminal
+> git clone repo,
+> open terminal,
 > npx vite --config vite.config.js
 
 
