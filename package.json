@@ -1,0 +1,10 @@
+{
+  "devDependencies": {
+    "http-proxy-middleware": "^2.0.6",
+    "vite": "^4.3.5"
+  },
+  "dependencies": {
+    "geotiff": "^2.0.7",
+    "three": "^0.152.2"
+  }
+}

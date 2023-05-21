@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>3D Earth</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+
+  <script src="//unpkg.com/d3"></script>
+  <script src="//unpkg.com/three"></script>
+  <script src="//unpkg.com/three-trackballcontrols-web/dist/three-trackballcontrols.min.js"></script>
+  <script src="//unpkg.com/three-geojson-geometry"></script>
+  
+  <!--<script src="../../dist/three-geojson-geometry.js"></script>-->
+</head>
+
+<body>
+    <div class="header">
+        <h1>3D Earth</h1>
+        <p1 id="displayText">Sample</p1>
+        <p2 id="cordText">Right Click for Coordinates</p2>
+        <div class="button-container">
+            <div id="buttonArea"></div>
+        </div>
+    </div>   
+
+<div id="viz"></div>
+
+<script type="module" src="/main.js"></script>
+</body>
+</html>
