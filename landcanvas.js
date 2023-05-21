@@ -24,7 +24,8 @@ const readGeoTif= async () => {
 
 let demName = 'three:dem';
 let l8layerName= 'three:idkl8';
-let bbox=[76.24868774414062,8.75006103515625, 77.76315307617188,10.86053466796875];
+//let bbox=[76.24868774414062,8.75006103515625, 77.76315307617188,10.86053466796875]; //bbox of whole idukki district
+let bbox=[76.8485369367407429,9.7317189673059890,77.1207264675680193,10.1515915309470532] //bbox of part of idukki district
 
 //function to make wms layer request
 function wmsreq(wmsLayerName,bbox){
@@ -79,12 +80,17 @@ tl= tl*(Math.PI/180);
 //creating geometry
 const geometry= new THREE.SphereGeometry(6378,64,64,ps,pl,ts,tl);
 
-const textureimg= new THREE.TextureLoader().load(wmsreq(l8layerName,bbox)); //loading overlay image as wms layer
-const distext= new THREE.TextureLoader().load(wmsreq(demName,bbox));  //loading dem as wms layer
+/*** 
+ * For demo purpose, using dem and overlay from file directory. To use geoserver, use function wmsreq(layer,bbox)
+ * inside THREE.TextureLoader().load()
+ ***/
+
+const textureimg= new THREE.TextureLoader().load('file/idkcrop.png'); //loading overlay image as wms layer
+const distext= new THREE.TextureLoader().load('file/demcrop.png');  //loading dem as wms layer
 
 
 //adding the textures to material
-var material= new THREE.MeshPhongMaterial({ map:textureimg,transparent:true,displacementMap:distext,displacementScale:10});
+var material= new THREE.MeshPhongMaterial({ map:textureimg,transparent:true,displacementMap:distext,displacementScale:5});
 
 //creating mesh (from material and geometry)
 var overlaymesh= new THREE.Mesh(geometry, material);

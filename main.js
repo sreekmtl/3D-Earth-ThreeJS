@@ -90,7 +90,7 @@ function main(){
 
   // Setup camera
   const camera = new THREE.PerspectiveCamera(75,window.innerWidth / window.innerHeight,1,20000);
-  camera.position.set(cx,cy,cz);
+  camera.position.set(1425,cy,-6160); //use cx,cy,cz for exact location. This is for demo
   camera.lookAt(0,0,0);
   camera.updateProjectionMatrix();
   
@@ -191,7 +191,7 @@ function main(){
     camera.updateProjectionMatrix();
     controlSpeed();
     controls.update();
-    displayElement.textContent = controls.getDistance()-6378+" KMs";
+    displayElement.textContent =controls.getDistance()-6378+" KMs";
     renderer.render(scene, camera);
     requestAnimationFrame(animate);
   })();
