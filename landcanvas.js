@@ -85,8 +85,8 @@ const geometry= new THREE.SphereGeometry(6378,64,64,ps,pl,ts,tl);
  * inside THREE.TextureLoader().load()
  ***/
 
-const textureimg= new THREE.TextureLoader().load(wmsreq(demName,bbox)); //loading overlay image as wms layer
-const distext= new THREE.TextureLoader().load(wmsreq(l8layerName,bbox));  //loading dem as wms layer
+const textureimg= new THREE.TextureLoader().load(wmsreq(l8layerName,bbox)); //loading overlay image as wms layer
+const distext= new THREE.TextureLoader().load(wmsreq(demName,bbox));  //loading dem as wms layer
 
 
 //adding the textures to material
