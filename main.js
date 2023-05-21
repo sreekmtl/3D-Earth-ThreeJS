@@ -73,15 +73,15 @@ function main(){
 
   // Create the buttons
   let zoomInButton = document.createElement("button");
-  zoomInButton.textContent = "FOV - ";
+  zoomInButton.textContent = "Zoom In";
   zoomInButton.addEventListener("click", onZoomIn);
 
   let zoomOutButton = document.createElement("button");
-  zoomOutButton.textContent = "FOV + ";
+  zoomOutButton.textContent = "Zoom Out";
   zoomOutButton.addEventListener("click", onZoomOut);
 
-  document.getElementById("buttonArea").appendChild(zoomInButton).classList.add("button");
-  document.getElementById("buttonArea").appendChild(zoomOutButton).classList.add("button");
+  //document.getElementById("buttonArea").appendChild(zoomInButton).classList.add("button");
+  //document.getElementById("buttonArea").appendChild(zoomOutButton).classList.add("button");
 
   var displayElement = document.getElementById('displayText');
   var cordElement= document.getElementById('cordText');
