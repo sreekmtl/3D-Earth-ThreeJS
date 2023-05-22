@@ -90,7 +90,7 @@ const distext= new THREE.TextureLoader().load(wmsreq(demName,bbox));  //loading 
 
 
 //adding the textures to material
-var material= new THREE.MeshPhongMaterial({ map:textureimg,transparent:true,displacementMap:distext,displacementScale:5});
+var material= new THREE.MeshPhongMaterial({ map:textureimg,transparent:true,displacementMap:distext,displacementScale:1});
 
 //creating mesh (from material and geometry)
 var overlaymesh= new THREE.Mesh(geometry, material);
