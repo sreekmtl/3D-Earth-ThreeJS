@@ -1,6 +1,4 @@
 import * as THREE from 'three';
-import * as GeoTIFF from 'geotiff'
-import { TIFFLoader } from 'three/addons/loaders/TIFFLoader.js';
 
 
 /*** 
@@ -8,19 +6,6 @@ import { TIFFLoader } from 'three/addons/loaders/TIFFLoader.js';
  rgb tif image
 ***/
 export function overlay(){
-
-var tifimg;
-
-//loading tif file
-const readGeoTif= async () => {
-    const rawTiff= await GeoTIFF.fromUrl('textures/dem.tif');
-    const tifImage= await rawTiff.getImage();
-    const image = {
-        width: tifImage.getWidth(),
-        height: tifImage.getHeight(),
-      };
-    tifimg= tifImage;
-}
 
 let demName = 'three:dem';
 let l8layerName= 'three:idkl8';

@@ -1,3 +1,7 @@
+import { GeoJsonGeometry } from 'three-geojson-geometry';
+import * as THREE from 'three';
+import * as d3 from 'd3'
+
 /*** 
  Script to load geojson file and convert to threejs lines
 ***/
@@ -10,7 +14,7 @@ export function loadgj() {
         
         const lineObjs = [
           new THREE.LineSegments(
-            new THREE.GeoJsonGeometry(d3.geoGraticule10(), alt),
+            new GeoJsonGeometry(d3.geoGraticule10(), alt),
             new THREE.LineBasicMaterial({
               color: 'white',
               opacity: 0.04,
@@ -30,7 +34,7 @@ export function loadgj() {
         
         countries.features.forEach(({ properties, geometry }) => {
           lineObjs.push(new THREE.LineSegments(
-            new THREE.GeoJsonGeometry(geometry, alt),
+            new GeoJsonGeometry(geometry, alt),
             materials
           ))
         });
