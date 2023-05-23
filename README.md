@@ -1,6 +1,8 @@
 # 3D-Earth-ThreeJS
 3D virtual globe developed using ThreeJS. Digital Elevation Model (DEM) and overlay image (Landsat8) are loaded as WMS Layers from Geoserver and used to create the 3D terrain.
 
+Prerequisites: You need nodeJS and Geoserver installation on your system. If you want to load image locally instead of from Geoserver, you have to make changes in landcanvas.js file in calculating the extent of overlaymesh.
+
 To Run
 > git clone repo,
 > open terminal,
