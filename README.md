@@ -10,6 +10,7 @@ To Run
 
 
 **Preview Images**
+![alt text](https://github.com/sreekmtl/3D-Earth-ThreeJS/blob/main/preview/Untitled%20video%20-%20Made%20with%20Clipchamp.gif)
 
 1. Home Page
 ![alt text](https://github.com/sreekmtl/3D-Earth-ThreeJS/blob/main/preview/3d9.png)
