@@ -90,10 +90,25 @@ function main(){
 
   // Setup camera
   const camera = new THREE.PerspectiveCamera(75,window.innerWidth / window.innerHeight,1,20000);
-  camera.position.set(1425,cy,-6160); //use cx,cy,cz for exact location. This is for demo
+  //camera.position.set(1425,cy,-6160); //use cx,cy,cz for exact location. This is for demo
   camera.lookAt(0,0,0);
   camera.updateProjectionMatrix();
   
+  //creating camera moving animation to the target area
+  const startPosition= new THREE.Vector3(1425,9000,-6160);
+  const endPosition= new THREE.Vector3(1425,cy,-6160); //1414.409116321146,1109.8583367998397,-6130.491802465729
+  const animDuration=5;
+
+  const mixer= new THREE.AnimationMixer(camera);
+  const track= new THREE.VectorKeyframeTrack('.position',[0,animDuration],[startPosition.x, startPosition.y, startPosition.z,
+                            endPosition.x, endPosition.y, endPosition.z]);
+
+  const clip= new THREE.AnimationClip('CameraAnimation', animDuration,[track]);
+  const action= mixer.clipAction(clip);
+
+  action.setLoop(THREE.LoopOnce);
+  action.clampWhenFinished=true;
+  action.play();
   
 
   function calculateDistanceFromFOV(fov, viewHeight) {
@@ -187,7 +202,7 @@ function main(){
 
   // Kick-off renderer
   (function animate() { // IIFE
-    // Frame cycle
+    mixer.update(0.025);
     camera.updateProjectionMatrix();
     controlSpeed();
     controls.update();

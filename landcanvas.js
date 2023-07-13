@@ -3,14 +3,15 @@ import * as THREE from 'three';
 
 /*** 
  Script to load satellite images as WMS layers and to overlay the globe. This script will load both the dem image for terrain and overlaying
- rgb tif image
+ rgb tif image. If Webserver for serving WMS layer is not available, it can use tiffloader library to load the textures from local
 ***/
+
 export function overlay(){
 
 let demName = 'three:dem';
 let l8layerName= 'three:idkl8';
-let bbox=[76.24868774414062,8.75006103515625, 77.76315307617188,10.86053466796875]; //bbox of whole idukki district
-//let bbox=[76.8485369367407429,9.7317189673059890,77.1207264675680193,10.1515915309470532] //bbox of part of idukki district
+//let bbox=[76.24868774414062,8.75006103515625, 77.76315307617188,10.86053466796875]; //bbox of whole idukki district
+let bbox=[76.8485369367407429,9.7317189673059890,77.1207264675680193,10.1515915309470532] //bbox of part of idukki district
 
 //function to make wms layer request
 function wmsreq(wmsLayerName,bbox){
